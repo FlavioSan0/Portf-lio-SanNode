@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "ABF Representações | Case de Identidade Visual",
+  title: "ABF Representações | Case SanNode",  
   description:
     "Case de identidade visual da ABF Representações desenvolvido pela SanNode.",
 };
