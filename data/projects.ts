@@ -42,8 +42,6 @@ export const projects: Project[] = [
     client: "ABF Representações",
     role: "Design de identidade visual e direção criativa",
 
-    presentationUrl: "http://localhost:3000/projetos/abf-representacoes",
-
     highlights: [
       "Sistema visual",
       "Aplicações de marca",

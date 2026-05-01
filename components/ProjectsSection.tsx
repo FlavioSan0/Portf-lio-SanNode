@@ -71,12 +71,10 @@ export default function ProjectsSection() {
               </div>
 
                 <a
-                href={project.presentationUrl || `/projetos/${project.slug}`}
-                target={project.presentationUrl ? "_blank" : undefined}
-                rel={project.presentationUrl ? "noreferrer" : undefined}
+                href={`/projetos/${project.slug}`}
                 className="mt-5 inline-flex items-center text-sm font-semibold text-[#D9F4FF] transition hover:text-[#00D9FF]"
                 >
-                Ver apresentação
+                Ver case
                 <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
             </article>
