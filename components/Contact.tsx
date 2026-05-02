@@ -38,7 +38,7 @@ export default function Contact() {
 
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-[#B9F5FF]" />
-                <span>lucas0202fla@email.com</span>
+                <span>lucas0202fla@Gmail.com</span>
               </div>
             </div>
           </div>
