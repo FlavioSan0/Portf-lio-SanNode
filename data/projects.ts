@@ -129,37 +129,42 @@ export const projects: Project[] = [
     ],
     link: "https://site-casamento-chi.vercel.app",
   },
+
   {
     slug: "controle-estoque-mecanica",
     title: "Controle de Estoque Mecânica",
     category: "programacao",
-    type: "Sistema Web",
+    type: "Sistema Web Privado",
     description:
-      "Sistema para controle de produtos, fornecedores, entradas, saídas, movimentações e dashboard operacional.",
-    status: "Em desenvolvimento",
+    "Sistema privado para controle de estoque em oficina mecânica, com evolução planejada para se tornar uma plataforma de gestão operacional.",    status: "Em desenvolvimento",
     year: "2026",
     client: "Projeto de sistema",
     role: "Desenvolvimento front-end, organização de fluxo e integração",
     stack: ["React", "Tailwind", "Supabase", "Express"],
     highlights: [
+      "Dashboard operacional",
       "Cadastro de produtos",
-      "Controle de fornecedores",
-      "Movimentações de estoque",
+      "Controle de movimentações",
     ],
     challenge:
       "Criar uma solução organizada para controlar produtos, fornecedores, entradas, saídas e movimentações de uma mecânica.",
     solution:
       "O sistema foi estruturado com páginas específicas, dashboard, formulários padronizados e uma interface visual limpa para facilitar o uso diário.",
     result:
-      "A solução permite acompanhar o estoque com mais clareza, reduzindo desorganização e preparando o projeto para futuras integrações.",
-    deliverables: [
+      "A solução permite acompanhar o estoque com mais clareza, reduzindo desorganização e criando uma base para evoluir o projeto em um sistema completo de gestão mecânica.",    deliverables: [
       "Dashboard",
       "Cadastro de produtos",
       "Cadastro de fornecedores",
       "Entradas e saídas",
       "Histórico de movimentações",
+      "Autenticação por login",
     ],
     sections: [
+      {
+        title: "Acesso restrito",
+        description:
+          "Por se tratar de um sistema operacional privado, o acesso é protegido por login. O case apresenta as principais telas e funcionalidades sem expor dados internos.",
+      },
       {
         title: "Interface",
         description:
@@ -170,16 +175,10 @@ export const projects: Project[] = [
         description:
           "O sistema organiza entradas, saídas e movimentações para facilitar o acompanhamento dos produtos.",
       },
-      {
-        title: "Evolução",
-        description:
-          "A estrutura permite adicionar relatórios, vendas, permissões e integração com um site comercial futuramente.",
-      },
     ],
     github: "https://github.com/FlavioSan0/Controle-de-estoque-mec-nica",
-  },
-
-  {
+    }
+  ,{
     slug: "automacoes-google-workspace",
     title: "Automações Google Workspace",
     category: "programacao",
