@@ -15,6 +15,8 @@ export const metadata = {
     "Case de identidade visual da ABF Representações desenvolvido pela SanNode.",
 };
 
+import CaseCTA from "@/components/CaseCTA";
+
 const projectInfo = [
   {
     label: "Cliente",
@@ -520,47 +522,13 @@ export default function AbfProjectPage() {
         </div>
       </section>
 
-      <section className="container-site py-20">
-  <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,#1A1D23,#0F1115)] p-8 md:p-12">
-    <div className="grid gap-8 md:grid-cols-[1fr_0.65fr] md:items-center">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-          Próximo passo
-        </p>
-
-        <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-          Quer apresentar sua marca com mais profissionalismo?
-        </h2>
-
-        <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
-          Posso ajudar a construir uma identidade visual clara, elegante e
-          funcional para sua marca, com aplicações, materiais digitais,
-          organização visual e presença profissional.
-        </p>
-      </div>
-
-      <div className="grid gap-3">
-        <a
-          href="https://wa.me/5584988479869"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-2xl border border-[#C6A15B]/30 bg-[#C6A15B] px-6 py-4 text-base font-bold text-[#0F1115] shadow-[0_12px_35px_rgba(198,161,91,0.18)] transition hover:bg-[#D8B66D]"
-        >
-          Falar no WhatsApp
-          <ArrowUpRight className="ml-2 h-5 w-5" />
-        </a>
-
-        <Link
-          href="/"
-          className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 text-base font-semibold text-white transition hover:border-[#C6A15B]/60 hover:text-[#C6A15B]"
-        >
-          Ver outros projetos
-          <ArrowUpRight className="ml-2 h-5 w-5" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+      <CaseCTA
+      variant="gold"
+      title="Quer apresentar sua marca com mais profissionalismo?"
+      description="Posso ajudar a construir uma identidade visual clara, elegante e funcional para sua marca, com aplicações, materiais digitais, organização visual e presença profissional."
+      secondaryLabel="Ver outros projetos"
+      secondaryHref="/"
+    />
     </main>
   );
 }

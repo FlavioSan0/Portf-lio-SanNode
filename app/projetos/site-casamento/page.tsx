@@ -17,6 +17,7 @@ export const metadata = {
   description:
     "Case do site de casamento com convite digital, confirmação de presença, lista de presentes e painel administrativo.",
 };
+import CaseCTA from "@/components/CaseCTA";
 
 const projectInfo = [
   {
@@ -550,49 +551,14 @@ export default function SiteCasamentoPage() {
         </div>
       </section>
 
-      <section className="container-site py-20">
-    <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,#08265E,#800000)] p-8 md:p-12">
-    <div className="grid gap-8 md:grid-cols-[1fr_0.65fr] md:items-center">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#F4EFE7]">
-          Próximo passo
-        </p>
-
-        <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-          Quer criar um site funcional para seu evento ou negócio?
-        </h2>
-
-        <p className="mt-5 max-w-2xl text-base leading-8 text-white/80">
-          Posso ajudar a transformar uma ideia em uma experiência digital bem
-          apresentada, com site publicado, painel de controle, formulário,
-          banco de dados e recursos personalizados para sua necessidade.
-        </p>
-      </div>
-
-      <div className="grid gap-3">
-        <a
-          href="https://wa.me/5584988479869"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-[#F5FBFF] px-6 py-4 text-base font-bold text-[#08265E] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition hover:bg-white hover:text-[#061B42]"
-        >
-          Falar no WhatsApp
-          <ArrowUpRight className="ml-2 h-5 w-5" />
-        </a>
-
-        <a
-          href="https://site-casamento-chi.vercel.app"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/[0.08] px-6 py-4 text-base font-semibold text-white transition hover:border-white/40 hover:bg-white/15"
-        >
-          Ver site publicado
-          <ExternalLink className="ml-2 h-5 w-5" />
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+      <CaseCTA
+        variant="wedding"
+        title="Quer criar um site funcional para seu evento ou negócio?"
+        description="Posso ajudar a transformar uma ideia em uma experiência digital bem apresentada, com site publicado, painel de controle, formulário, banco de dados e recursos personalizados para sua necessidade."
+        secondaryLabel="Ver site publicado"
+        secondaryHref="https://site-casamento-chi.vercel.app"
+        secondaryExternal
+      />
     </main>
   );
 }
