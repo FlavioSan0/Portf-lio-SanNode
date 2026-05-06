@@ -9,6 +9,17 @@ type RevealProps = {
   direction?: "up" | "down" | "left" | "right" | "none";
 };
 
+function isElementInViewport(element: HTMLElement) {
+  const rect = element.getBoundingClientRect();
+
+  return (
+    rect.top < window.innerHeight &&
+    rect.bottom > 0 &&
+    rect.left < window.innerWidth &&
+    rect.right > 0
+  );
+}
+
 export default function Reveal({
   children,
   delay = 0,
@@ -23,6 +34,24 @@ export default function Reveal({
 
     if (!element) return;
 
+    function revealIfVisible() {
+      if (!element) return;
+
+      if (isElementInViewport(element)) {
+        setVisible(true);
+      }
+    }
+
+    revealIfVisible();
+
+    const timeout = window.setTimeout(() => {
+      revealIfVisible();
+    }, 150);
+
+    const fallbackTimeout = window.setTimeout(() => {
+      setVisible(true);
+    }, 900);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -31,14 +60,29 @@ export default function Reveal({
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.08,
+        rootMargin: "0px 0px -20px 0px",
       }
     );
 
     observer.observe(element);
 
-    return () => observer.disconnect();
+    function handlePageShow() {
+      window.requestAnimationFrame(() => {
+        revealIfVisible();
+      });
+    }
+
+    window.addEventListener("pageshow", handlePageShow);
+    window.addEventListener("popstate", handlePageShow);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timeout);
+      window.clearTimeout(fallbackTimeout);
+      window.removeEventListener("pageshow", handlePageShow);
+      window.removeEventListener("popstate", handlePageShow);
+    };
   }, []);
 
   const directionClass = {
