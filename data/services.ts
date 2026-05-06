@@ -1,9 +1,9 @@
 import {
-  Brush,
-  Database,
+  Boxes,
   FileCode2,
-  MonitorSmartphone,
+  LayoutDashboard,
   Palette,
+  PanelsTopLeft,
   Workflow,
 } from "lucide-react";
 
@@ -12,36 +12,36 @@ export const services = [
     icon: Palette,
     title: "Identidade visual",
     description:
-      "Criação de marcas, paletas, tipografia, aplicações e materiais para negócios que precisam parecer mais profissionais.",
+      "Criação de marcas, paletas, aplicações visuais, materiais digitais e organização de presença visual para empresas e projetos.",
   },
   {
-    icon: Brush,
-    title: "Design para redes sociais",
+    icon: PanelsTopLeft,
+    title: "Sites e landing pages",
     description:
-      "Carrosséis, posts, Stories, capas, apresentações e peças com foco em clareza, estética e comunicação.",
+      "Desenvolvimento de páginas modernas, responsivas e publicadas, com foco em apresentação, conversão e clareza de informação.",
   },
   {
-    icon: MonitorSmartphone,
-    title: "Sites e interfaces",
+    icon: LayoutDashboard,
+    title: "Sistemas web",
     description:
-      "Landing pages, portfólios, sites institucionais e interfaces responsivas com visual moderno e boa usabilidade.",
+      "Criação de sistemas com painéis, cadastros, filtros, dashboards e fluxos internos para organizar operações reais.",
   },
   {
     icon: FileCode2,
-    title: "Sistemas personalizados",
+    title: "Interfaces e painéis",
     description:
-      "Painéis, cadastros, dashboards, controle de estoque, áreas administrativas e sistemas sob medida.",
-  },
-  {
-    icon: Database,
-    title: "Banco de dados e integrações",
-    description:
-      "Estruturação de dados, autenticação, uploads, registros e fluxos entre front-end e back-end.",
+      "Estruturação de telas administrativas, áreas internas, formulários, cards, tabelas e componentes pensados para uso prático.",
   },
   {
     icon: Workflow,
-    title: "Automações",
+    title: "Automações digitais",
     description:
-      "Automação de tarefas com Google Sheets, Forms, Drive, Apps Script e organização de processos repetitivos.",
+      "Automação de tarefas repetitivas com planilhas, formulários, documentos, pastas e fluxos personalizados.",
+  },
+  {
+    icon: Boxes,
+    title: "Organização de projetos",
+    description:
+      "Planejamento de funcionalidades, hierarquia de desenvolvimento, estrutura de páginas e evolução de soluções digitais.",
   },
 ];
