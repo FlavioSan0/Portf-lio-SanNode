@@ -246,7 +246,7 @@ export default function SiteCasamentoPage() {
             </div>
           </div>
 
-          <div className="mobile-panel ... md:p-8">border border-white/10 bg-white/[0.03] p-4 shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
+          <div className="mobile-panel border border-white/10 bg-white/3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-8">
             <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,#08265E,#07111F)] p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#80000066,transparent_30%)]" />
 

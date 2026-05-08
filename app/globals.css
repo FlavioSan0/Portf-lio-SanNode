@@ -46,10 +46,6 @@ h4,
   letter-spacing: -0.035em;
 }
 
-main {
-  animation: page-enter 420ms ease-out both;
-}
-
 ::selection {
   background: var(--cyan);
   color: #07111f;
@@ -161,18 +157,6 @@ main {
 
   to {
     opacity: 0.75;
-  }
-}
-
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -751,5 +735,56 @@ button {
 
   .responsive-title-lg {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+}
+
+/* ============================= */
+/* PAGE TRANSITIONS              */
+/* ============================= */
+
+.page-transition-wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+.page-transition-scan {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 217, 255, 0.95),
+    transparent
+  );
+  animation: page-scan 620ms ease-out both;
+  box-shadow: 0 0 22px rgba(0, 217, 255, 0.5);
+}
+
+@keyframes page-scan {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-scan {
+    animation: none;
+    display: none;
   }
 }
