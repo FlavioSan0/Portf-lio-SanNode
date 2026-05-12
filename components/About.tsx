@@ -55,7 +55,7 @@ export default function About() {
 
           <div className="space-y-5 text-base leading-8 text-[#A9BDD3]">
             <p>
-              Sou Flávio Santos, criador da SanNode. Minha atuação une design,
+              Sou Flávio Oliveira, criador da SanNode. Minha atuação une design,
               programação e organização de processos para criar identidades
               visuais, sites, sistemas e automações com estrutura.
             </p>
