@@ -1,0 +1,28 @@
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.responsive-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.responsive-title-xl {
+  font-size: clamp(2.15rem, 10vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.responsive-title-lg {
+  font-size: clamp(1.85rem, 8vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.responsive-copy {
+  font-size: clamp(0.98rem, 2.8vw, 1.125rem);
+  line-height: 1.75;
+}

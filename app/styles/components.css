@@ -1,0 +1,73 @@
+.tech-card {
+  position: relative;
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    background-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(0, 217, 255, 0.08);
+}
+
+.tech-button {
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.tech-button:hover {
+  transform: translateY(-2px);
+}
+
+.tech-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 217, 255, 0.16),
+    transparent 36%
+  );
+  opacity: 0;
+  transition: opacity 260ms ease;
+  pointer-events: none;
+}
+
+.tech-glow:hover::before {
+  opacity: 1;
+}
+
+.tech-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+.image-soft-zoom img {
+  transition: transform 500ms ease;
+}
+
+.image-soft-zoom:hover img {
+  transform: scale(1.035);
+}
+
+.mobile-panel {
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+
+.case-image-frame {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

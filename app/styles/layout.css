@@ -1,0 +1,16 @@
+.container-site {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+@media (max-width: 480px) {
+  .container-site {
+    width: min(100% - 24px, 1180px);
+  }
+}
+
+@media (max-width: 360px) {
+  .container-site {
+    width: min(100% - 20px, 1180px);
+  }
+}
