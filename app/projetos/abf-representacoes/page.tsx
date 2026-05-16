@@ -1,563 +1,394 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
   ArrowUpRight,
   CheckCircle2,
-  PenTool,
+  ExternalLink,
+  Palette,
+  PanelsTopLeft,
   Sparkles,
 } from "lucide-react";
 
-export const metadata = {
-  title: "ABF Representações | Identidade Visual e Presença Digital",
+import BackToTop from "@/components/BackToTop";
+import CaseCTA from "@/components/CaseCTA";
+
+export const metadata: Metadata = {
+  title: "ABF Representações | Identidade Visual e Landing Page",
   description:
-    "Case de identidade visual da ABF Representações, com criação de marca, conceito visual, paleta de cores, aplicações comerciais e estrutura para Instagram.",
-
+    "Case da SanNode para a ABF Representações: identidade visual, presença digital e landing page institucional publicada.",
   openGraph: {
-    title: "ABF Representações | Identidade Visual e Presença Digital",
+    title: "ABF Representações | Identidade Visual e Landing Page",
     description:
-      "Projeto de identidade visual com logo, conceito, aplicações, cartão de visita e presença digital para Instagram.",
-    url: "https://san-node.vercel.app/projetos/abf-representacoes",
-    siteName: "SanNode",
-    images: [
-      {
-        url: "/projetos/abf-case/logo-principal.png",
-        width: 1200,
-        height: 630,
-        alt: "Case de identidade visual ABF Representações",
-      },
-    ],
-    locale: "pt_BR",
-    type: "article",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "ABF Representações | Identidade Visual e Presença Digital",
-    description:
-      "Case de identidade visual com marca, aplicações comerciais e estrutura para Instagram.",
+      "Identidade visual, presença digital e landing page institucional desenvolvidas para a ABF Representações.",
     images: ["/projetos/abf-case/logo-principal.png"],
   },
 };
 
-import CaseCTA from "@/components/CaseCTA";
-import BackToTop from "@/components/BackToTop";
-
-const projectInfo = [
-  {
-    label: "Cliente",
-    value: "ABF Representações",
-  },
-  {
-    label: "Categoria",
-    value: "Identidade Visual",
-  },
-  {
-    label: "Ano",
-    value: "2026",
-  },
-  {
-    label: "Direção",
-    value: "Marca, conceito e presença digital",
-  },
-];
-
 const deliverables = [
   "Logo principal",
-  "Variações da marca",
   "Paleta de cores",
   "Conceito visual",
-  "Aplicação em cartão de visita",
-  "Criação do Instagram",
-  "Organização da bio",
+  "Variações da marca",
+  "Cartão de visita",
+  "Perfil do Instagram",
   "Capas de destaques",
-  "Modelos para Instagram",
-  "Padronização de marcas representadas",
-  "Sistema visual para comunicação",
+  "Landing page institucional",
 ];
 
-const colors = [
+const visualAssets = [
   {
-    name: "Dourado Fosco",
-    hex: "#C6A15B",
+    title: "Logo principal",
+    description: "Marca principal criada para representar solidez e confiança.",
+    image: "/projetos/abf-case/logo-principal.png",
   },
   {
-    name: "Branco Quente",
-    hex: "#F5F3EF",
-  },
-  {
-    name: "Grafite Profundo",
-    hex: "#0F1115",
-  },
-];
-
-const instagramAssets = [
-  {
-    title: "Marca representada",
+    title: "Conceito visual",
     description:
-      "Modelo visual criado para apresentar marcas representadas pela ABF de forma padronizada no Instagram.",
-    image: "/projetos/abf-case/marca-gama.png",
+      "Direção visual com foco em presença comercial, seriedade e crescimento.",
+    image: "/projetos/abf-case/conceito.png",
   },
   {
-    title: "Capa de destaque",
+    title: "Cartão de visita",
     description:
-      "Capa desenvolvida para organizar os destaques do Instagram da ABF por marca representada.",
-    image: "/projetos/abf-case/marca-alyne-azul.png",
+      "Aplicação da identidade em material direto para contato e apresentação.",
+    image: "/projetos/abf-case/cartao-visita.png",
   },
   {
-    title: "Variação visual",
+    title: "Perfil do Instagram",
     description:
-      "Versão alternativa para aplicação da marca representada, mantendo a identidade da ABF como moldura visual.",
-    image: "/projetos/abf-case/marca-alyne-branco.png",
+      "Organização inicial da presença digital para fortalecer a marca.",
+    image: "/projetos/abf-case/instagram-perfil.png",
   },
 ];
 
-const instagramChecklist = [
-  "Criação e organização do perfil",
-  "Bio comercial com direcionamento para atendimento",
-  "Capas de destaques para marcas representadas",
-  "Primeiros conteúdos para presença digital",
+const decisions = [
+  {
+    title: "Direção sóbria",
+    description:
+      "A identidade foi construída com uma estética comercial, escura e elegante, evitando excesso de elementos visuais.",
+  },
+  {
+    title: "Cores com presença",
+    description:
+      "A combinação de grafite profundo, dourado fosco e branco quente reforça profissionalismo e solidez.",
+  },
+  {
+    title: "Aplicação prática",
+    description:
+      "A marca foi pensada para funcionar em cartão, Instagram, materiais digitais e posteriormente na landing page.",
+  },
 ];
 
-export default function AbfProjectPage() {
+const landingHighlights = [
+  "Página institucional publicada",
+  "Aplicação da identidade visual",
+  "Apresentação comercial da empresa",
+  "CTA para contato",
+];
+
+export default function ABFRepresentacoesPage() {
   return (
-    <main className="min-h-screen bg-[#0F1115] text-[#F5F3EF]">
-      <section className="border-b border-white/10">
-        <div className="container-site py-8">
+    <main className="min-h-screen overflow-hidden bg-[#07111F] text-[#F5FBFF]">
+      <section className="relative overflow-hidden border-b border-[#1E3654]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#C6A15B22,transparent_30%),radial-gradient(circle_at_left,#00D9FF12,transparent_38%)]" />
+        <div className="tech-grid-bg absolute inset-0 opacity-20" />
+
+        <div className="container-site relative py-10">
           <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-white/70 transition hover:border-[#C6A15B] hover:text-[#C6A15B]"
+            href="/#projetos"
+            className="tech-button inline-flex items-center rounded-2xl border border-[#1E3654] bg-[#0C1B2E]/80 px-4 py-3 text-sm font-semibold text-[#A9BDD3] transition hover:border-[#00D9FF] hover:text-[#00D9FF]"
           >
-            <ArrowLeft className="h-4 w-4" />
-            Voltar para o portfólio
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Voltar para projetos
           </Link>
-        </div>
-      </section>
 
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#C6A15B22,transparent_30%),radial-gradient(circle_at_left,#ffffff08,transparent_40%)]" />
-
-        <div className="container-site relative grid gap-12 py-20 md:grid-cols-[0.95fr_1.05fr] md:items-center md:py-28">
-          <div>
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/70">
-              <Sparkles className="h-4 w-4 text-[#C6A15B]" />
-              Case de identidade visual
-            </div>
-
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              ABF Representações
-            </p>
-
-            <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">
-              Uma marca construída para transmitir solidez, confiança e
-              crescimento.
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">
-              A identidade visual da ABF Representações foi desenvolvida com uma
-              linguagem sóbria, comercial e sofisticada, explorando linhas,
-              proporções e contraste para reforçar presença profissional no
-              mercado de representação. Além da marca, o projeto incluiu a
-              estruturação inicial da presença digital no Instagram.
-            </p>
-
-            <div className="mobile-action-grid mt-8 flex flex-wrap gap-3 sm:flex-row">
-              <a
-                href="#aplicacoes"
-                className="inline-flex items-center rounded-2xl bg-[#C6A15B] px-6 py-4 font-semibold text-[#0F1115] transition hover:bg-[#D8B66D]"
-              >
-                Ver aplicações
-                <ArrowUpRight className="ml-2 h-5 w-5" />
-              </a>
-
-              <a
-                href="#conceito"
-                className="inline-flex items-center rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 font-semibold text-white transition hover:border-[#C6A15B] hover:text-[#C6A15B]"
-              >
-                Entender conceito
-              </a>
-            </div>
-          </div>
-
-          <div className="mobile-panel border border-white/10 bg-white/3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-8">
-            <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0F1115]">
-              <Image
-                src="/projetos/abf-case/logo-principal.png"
-                alt="Logo principal ABF Representações"
-                width={1400}
-                height={1000}
-                className="h-auto w-full object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-site py-16">
-        <div className="grid gap-5 md:grid-cols-4">
-          {projectInfo.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-5"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C6A15B]">
-                {item.label}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-white/75">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section
-        id="conceito"
-        className="border-y border-white/10"
-      >
-        <div className="container-site grid gap-10 py-20 md:grid-cols-[0.8fr_1.2fr] md:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Conceito
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Direção visual focada em estrutura e confiança.
-            </h2>
-
-            <p className="mt-5 text-base leading-8 text-white/65">
-              O conceito parte da ideia de crescimento comercial, solidez e
-              representação profissional. As linhas verticais reforçam estrutura
-              e presença, enquanto o dourado fosco transmite valor, maturidade e
-              posicionamento.
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F1115]">
-            <Image
-              src="/projetos/abf-case/conceito.png"
-              alt="Conceito da marca ABF Representações"
-              width={1400}
-              height={1000}
-              className="h-auto w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="container-site py-20">
-        <div className="mb-10 grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Elementos gráficos
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Linhas que representam expansão e direção comercial.
-            </h2>
-          </div>
-
-          <p className="text-base leading-8 text-white/65">
-            Os elementos verticais funcionam como apoio visual da marca,
-            podendo ser usados em aplicações, materiais institucionais e peças de
-            comunicação.
-          </p>
-        </div>
-
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F1115]">
-          <Image
-            src="/projetos/abf-case/linhas-conceito.png"
-            alt="Linhas conceituais da marca ABF"
-            width={1400}
-            height={1000}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-[#121419]">
-        <div className="container-site grid gap-10 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F1115]">
-            <Image
-              src="/projetos/abf-case/construcao-logo.png"
-              alt="Construção da logo ABF Representações"
-              width={1400}
-              height={1000}
-              className="h-auto w-full object-cover"
-            />
-          </div>
-
-          <div>
-            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C6A15B]/15 text-[#C6A15B]">
-              <PenTool className="h-6 w-6" />
-            </div>
-
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Construção
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Proporção, alinhamento e consistência.
-            </h2>
-
-            <p className="mt-5 text-base leading-8 text-white/65">
-              A marca foi construída com foco em presença e legibilidade. A
-              combinação das letras com as linhas cria um símbolo forte, direto
-              e com personalidade própria.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-site py-20">
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Paleta de cores
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Cores sóbrias para uma marca comercial.
-            </h2>
-          </div>
-
-          <p className="max-w-xl text-base leading-8 text-white/65">
-            A paleta combina grafite profundo, dourado fosco e branco quente,
-            criando uma identidade elegante, séria e fácil de aplicar.
-          </p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-3">
-          {colors.map((color) => (
-            <div
-              key={color.hex}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-5"
-            >
-              <div
-                className="h-32 rounded-2xl border border-white/10"
-                style={{ backgroundColor: color.hex }}
-              />
-
-              <h3 className="mt-5 text-xl font-bold text-white">
-                {color.name}
-              </h3>
-
-              <p className="mt-2 text-sm text-white/60">{color.hex}</p>
-            </div>
-          ))}
-        </div>
-
-      </section>
-
-      <section className="border-y border-white/10 bg-[#121419]">
-        <div className="container-site py-20">
-          <div className="mb-10 grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+          <div className="grid gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-                Variações
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#C6A15B]">
+                Case de identidade e presença digital
               </p>
 
-              <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-                Uma identidade preparada para diferentes usos.
-              </h2>
+              <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#F5FBFF] md:text-7xl">
+                ABF Representações
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#A9BDD3]">
+                Identidade visual, presença digital e landing page institucional
+                desenvolvidas para fortalecer a apresentação comercial da marca.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+  {["Identidade visual", "Landing page", "Instagram", "Vercel"].map(
+    (item) => (
+      <span
+        key={item}
+        className="rounded-full border border-[#1E3654] bg-[#0C1B2E]/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#A9BDD3]"
+      >
+        {item}
+      </span>
+    )
+  )}
+</div>
+
+<div className="mt-8 flex flex-wrap gap-3">
+  <a
+    href="https://abf-representacao.vercel.app/#"
+    target="_blank"
+    rel="noreferrer"
+    className="tech-button inline-flex items-center justify-center rounded-2xl bg-[#0B2A5B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#2563EB]"
+  >
+    Acessar landing page
+    <ExternalLink className="ml-2 h-4 w-4" />
+  </a>
+
+  <Link
+    href="/#projetos"
+    className="tech-button inline-flex items-center justify-center rounded-2xl border border-[#1E3654] bg-[#0C1B2E]/80 px-5 py-3 text-sm font-semibold text-[#A9BDD3] transition hover:border-[#00D9FF] hover:text-[#00D9FF]"
+  >
+    Ver outros projetos
+    <ArrowUpRight className="ml-2 h-4 w-4" />
+  </Link>
+</div>
             </div>
 
-            <p className="text-base leading-8 text-white/65">
-              As variações permitem aplicar a marca em formatos horizontais,
-              reduzidos, monocromáticos e materiais diversos sem perder
-              reconhecimento.
-            </p>
-          </div>
+            <div className="relative rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/80 p-6 shadow-[0_25px_90px_rgba(0,0,0,0.35)] backdrop-blur">
+              <div className="absolute right-0 top-0 h-40 w-40 translate-x-10 -translate-y-10 rounded-full bg-[#C6A15B]/20 blur-3xl" />
 
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F1115]">
-            <Image
-              src="/projetos/abf-case/variacoes-logo.png"
-              alt="Variações da logo ABF Representações"
-              width={1400}
-              height={1000}
-              className="h-auto w-full object-cover"
-            />
+              <div className="relative flex min-h-[280px] items-center justify-center rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,#0F1115,#07111F)] p-10">
+                <Image
+                  src="/projetos/abf-case/logo-principal.png"
+                  alt="Logo ABF Representações"
+                  width={720}
+                  height={420}
+                  priority
+                  className="h-auto max-h-[240px] w-full object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container-site py-20">
-  <div className="mb-10 grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-end">
-    <div>
-      <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-        Presença digital
-      </p>
-
-      <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-        Destaques organizados para apresentar as marcas representadas.
-      </h2>
-    </div>
-
-    <p className="text-base leading-8 text-white/65">
-      Além da identidade principal, foram criadas capas e modelos visuais para
-      organizar o Instagram da ABF, destacando cada marca representada de forma
-      padronizada, profissional e fácil de reconhecer.
-    </p>
-  </div>
-
-  <div className="mobile-panel border border-white/10 bg-white/3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-8">
-    <div className="mb-8 flex items-center justify-between gap-4 border-b border-white/10 pb-6">
-      <div>
-        <p className="text-sm font-semibold text-white">
-          Capas de destaques
-        </p>
-        <p className="mt-1 text-sm text-white/55">
-          Estrutura visual aplicada ao perfil da ABF Representações.
-        </p>
-      </div>
-
-      <span className="hidden rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#C6A15B] sm:inline-flex">
-        Instagram
-      </span>
-    </div>
-
-    <div className="grid gap-6 sm:grid-cols-3">
-      {instagramAssets.map((asset) => (
-        <article
-          key={asset.title}
-          className="group rounded-3xl border border-white/10 bg-[#0F1115] p-5 transition hover:border-[#C6A15B]/60"
-        >
-          <div className="mx-auto flex aspect-square w-full max-w-[210px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-[#0B0D11] p-3 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
-            <div className="relative h-full w-full overflow-hidden rounded-full">
-              <Image
-                src={asset.image}
-                alt={asset.title}
-                fill
-                loading="lazy"
-                sizes="(max-width: 640px) 50vw, 210px"
-                className="object-cover transition duration-300 group-hover:scale-105"
-              />
-            </div>
-          </div>
-
-          <div className="mt-5 text-center">
-            <h3 className="text-lg font-bold text-white">{asset.title}</h3>
-
-            <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-white/55">
-              {asset.description}
-            </p>
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
-
-      <section className="border-y border-white/10 bg-[#121419]">
-        <div className="container-site grid gap-10 py-20 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+      <section className="container-site responsive-section">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Instagram
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#00D9FF]">
+              Contexto
             </p>
 
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Perfil estruturado do zero para fortalecer a presença digital.
+            <h2 className="responsive-title-lg mt-3 max-w-3xl font-black text-[#F5FBFF] text-balance">
+              Uma marca que precisava se apresentar com mais força.
             </h2>
+          </div>
 
-            <p className="mt-5 text-base leading-8 text-white/65">
-              Além da criação da identidade visual, o projeto também envolveu a
-              estruturação do Instagram da ABF Representações, com organização
-              da bio, imagem de perfil, destaques por marcas representadas e
-              primeiros conteúdos publicados.
+          <div className="rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/72 p-6 backdrop-blur md:p-8">
+            <p className="text-base leading-8 text-[#A9BDD3]">
+              A ABF Representações precisava de uma identidade visual mais
+              sólida para comunicar profissionalismo, confiança e presença
+              comercial. O projeto começou pela criação da marca e evoluiu para
+              aplicações digitais, organização visual e uma landing page
+              institucional publicada.
             </p>
 
-            <div className="mt-6 grid gap-3">
-              {instagramChecklist.map((item) => (
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {deliverables.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-white/75"
+                  className="flex items-center gap-3 rounded-2xl border border-[#1E3654] bg-[#07111F]/70 px-4 py-3"
                 >
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#C6A15B]" />
-                  <span className="text-sm">{item}</span>
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#00D9FF]" />
+                  <span className="text-sm font-semibold text-[#D9F4FF]">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="mx-auto w-full max-w-[360px] rounded-[2.2rem] border border-white/10 bg-white/[0.04] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
-          <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#0F1115]">
-            <Image
-              src="/projetos/abf-case/instagram-perfil.png"
-              alt="Perfil do Instagram da ABF Representações estruturado pela SanNode"
-              width={820}
-              height={1792}
-              className="h-auto w-full object-contain"
-            />
-          </div>
-</div>  
         </div>
       </section>
 
-      <section id="aplicacoes" className="container-site py-20">
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Aplicações
-            </p>
+      <section className="border-y border-[#1E3654] bg-[#07111F]/78">
+        <div className="container-site responsive-section">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#C6A15B]">
+                Direção visual
+              </p>
 
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Cartão de visita e presença comercial.
-            </h2>
+              <h2 className="responsive-title-lg mt-3 max-w-3xl font-black text-[#F5FBFF] text-balance">
+                Solidez, confiança e presença comercial.
+              </h2>
+            </div>
+
+            <p className="responsive-copy max-w-2xl text-[#A9BDD3] text-pretty">
+              A construção visual buscou uma linguagem sóbria e elegante, com
+              cores que reforçam profissionalismo e materiais que mantêm
+              consistência em diferentes pontos de contato.
+            </p>
           </div>
 
-          <p className="max-w-xl text-base leading-8 text-white/65">
-            A aplicação em cartão de visita demonstra como a identidade se
-            comporta em materiais comerciais, mantendo contraste, clareza e
-            sofisticação.
-          </p>
-        </div>
-
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F1115] shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-          <Image
-            src="/projetos/abf-case/cartao-visita.png"
-            alt="Cartão de visita ABF Representações"
-            width={1400}
-            height={1000}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-[#121419]">
-        <div className="container-site grid gap-10 py-20 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#C6A15B]">
-              Entregas
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              O que foi desenvolvido.
-            </h2>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            {deliverables.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 text-white/75"
+          <div className="grid gap-5 lg:grid-cols-3">
+            {decisions.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/72 p-6 backdrop-blur"
               >
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-[#C6A15B]" />
-                <span className="text-sm">{item}</span>
-              </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#10233B] text-[#C6A15B]">
+                  <Palette className="h-6 w-6" />
+                </div>
+
+                <h3 className="mt-5 text-xl font-black text-[#F5FBFF]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#A9BDD3]">
+                  {item.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
+      <section className="container-site responsive-section">
+        <div className="mb-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#00D9FF]">
+            Aplicações
+          </p>
+
+          <h2 className="responsive-title-lg mt-3 max-w-3xl font-black text-[#F5FBFF] text-balance">
+            A identidade aplicada em pontos reais da marca.
+          </h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {visualAssets.map((asset) => (
+            <article
+              key={asset.title}
+              className="overflow-hidden rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/72 backdrop-blur"
+            >
+              <div className="relative min-h-[280px] bg-[#07111F]">
+                <Image
+                  src={asset.image}
+                  alt={asset.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-black text-[#F5FBFF]">
+                  {asset.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#A9BDD3]">
+                  {asset.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-[#1E3654] bg-[#07111F]/78">
+        <div className="container-site responsive-section">
+          <div className="grid gap-8 rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/72 p-6 backdrop-blur md:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#00D9FF]">
+                Evolução do projeto
+              </p>
+
+              <h2 className="mt-3 text-3xl font-black text-[#F5FBFF] md:text-5xl">
+                A identidade também ganhou uma landing page.
+              </h2>
+
+              <p className="mt-5 text-base leading-8 text-[#A9BDD3]">
+                Depois da construção da identidade visual, a marca foi aplicada
+                em uma landing page institucional para apresentar a ABF
+                Representações, suas áreas de atuação e seus canais de contato
+                de forma mais profissional.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {landingHighlights.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[#1E3654] bg-[#10233B] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#A9BDD3]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[#1E3654] bg-[#07111F]/80 p-5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#10233B] text-[#00D9FF]">
+                <PanelsTopLeft className="h-6 w-6" />
+              </div>
+
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-[#00D9FF]">
+                Projeto publicado
+              </p>
+
+              <h3 className="mt-3 text-2xl font-black text-[#F5FBFF]">
+                Landing Page ABF Representações
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-[#A9BDD3]">
+                Página institucional desenvolvida para reforçar a presença
+                digital da marca e facilitar o contato comercial.
+              </p>
+
+              <a
+                href="https://abf-representacao.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="tech-button mt-6 inline-flex items-center justify-center rounded-2xl bg-[#0B2A5B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#2563EB]"
+              >
+                Acessar landing page
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-site responsive-section">
+        <div className="grid gap-8 rounded-[2rem] border border-[#1E3654] bg-[#0C1B2E]/72 p-6 backdrop-blur md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#C6A15B]">
+              Resultado
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black text-[#F5FBFF] md:text-5xl">
+              Marca mais completa, clara e pronta para se apresentar.
+            </h2>
+          </div>
+
+          <p className="text-base leading-8 text-[#A9BDD3]">
+            O case evoluiu de uma identidade visual para uma presença digital
+            mais estruturada. A ABF passou a contar com uma base visual
+            consistente, aplicações para comunicação e uma landing page
+            institucional para apresentar melhor a empresa.
+          </p>
+        </div>
+      </section>
+
       <CaseCTA
-      variant="gold"
-      title="Quer apresentar sua marca com mais profissionalismo?"
-      description="Posso ajudar a construir uma identidade visual clara, elegante e funcional para sua marca, com aplicações, materiais digitais, organização visual e presença profissional."
-      secondaryLabel="Ver outros projetos"
-      secondaryHref="/"
-    />
-    <BackToTop />
+        eyebrow="Quer uma presença digital mais profissional?"
+        title="Sua marca também pode sair do improviso."
+        description="Posso ajudar a organizar sua identidade visual, criar uma página de apresentação e transformar sua presença digital em algo mais claro, bonito e funcional."
+        primaryLabel="Falar sobre meu projeto"
+        primaryHref="https://wa.me/5584988479869"
+        secondaryLabel="Voltar aos projetos"
+        secondaryHref="/#projetos"
+        variant="gold"
+      />
+
+      <BackToTop />
     </main>
   );
 }

@@ -5,20 +5,20 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const projects = [
   {
-    number: "01",
-    title: "ABF Representações",
-    category: "Identidade visual + landing page",
-    slug: "abf-representacoes",
-    image: "/projetos/abf-case/landing-page.png",
-    imageMode: "screen",
-    context:
-      "A ABF precisava de uma presença visual mais sólida e de uma página institucional para apresentar a empresa, suas representações e seus canais de contato.",
-    decision:
-      "A identidade visual foi aplicada em uma landing page escura, sóbria e comercial, conectando marca, apresentação, serviços e chamada para contato.",
-    result:
-      "O projeto passou a ter uma presença digital mais completa, unindo marca profissional e página publicada para apresentação comercial.",
-    deliverables: ["Logo", "Identidade", "Landing page", "Contato"],
-  },
+  number: "01",
+  title: "ABF Representações",
+  category: "Identidade visual + landing page",
+  slug: "abf-representacoes",
+  image: "/projetos/abf-case/logo-principal.png",
+  imageMode: "brand",
+  context:
+    "A ABF precisava de uma presença visual mais sólida para se apresentar de forma profissional no mercado de representação.",
+  decision:
+    "Além da identidade visual, o projeto evoluiu para uma landing page institucional, aplicando a marca em uma página escura, sóbria e comercial.",
+  result:
+    "A marca ganhou uma base visual consistente e uma página publicada para apresentar a empresa, suas representações e seus canais de contato.",
+  deliverables: ["Logo", "Identidade", "Landing page", "Contato"],
+},
   {
     number: "02",
     title: "Site de Casamento",
